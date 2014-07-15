@@ -1,3 +1,8 @@
+// Mocking frameworks (like Sinon.JS) may mock out the real XMLHttpRequest,
+// preventing us from retrieving source maps. Store a reference to the real one,
+// so that doesn't happen.
+var XMLHttpRequest = window.XMLHttpRequest;
+
 var SourceMapConsumer = require('source-map').SourceMapConsumer;
 var path = require('path');
 var fs = require('fs');
